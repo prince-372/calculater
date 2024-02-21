@@ -1,0 +1,25 @@
+#calculator {
+  width: 230px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+input[type="button"] {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  margin: 5px;
+}
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.item-center {
+  align-items: center;
+}
+.min-h-100vh {
+  min-height: 100vh;
+}
