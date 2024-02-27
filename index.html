@@ -8,21 +8,18 @@
 <meta name="title" content="Calculator" />
 <meta name="description" content="" />
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://metatags.io/" />
 <meta property="og:title" content="Calculator" />
 <meta property="og:description" content="" />
 <meta property="og:image" content="https://i.ibb.co/bFGtg3s/Screenshot-2024-02-21-124254.png" />
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://metatags.io/" />
 <meta property="twitter:title" content="Calculator" />
 <meta property="twitter:description" content="" />
 <meta property="twitter:image" content="https://i.ibb.co/bFGtg3s/Screenshot-2024-02-21-124254.png" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -50,13 +47,25 @@
     </div>
     <script>
       function addToDisplay(value) {
-        document.getElementById("display").value += value;
+        let display = document.getElementById("display");
+        let currentValue = display.value;
+        
+        let lastChar = currentValue[currentValue.length - 1];
+        if (isOperator(lastChar) && isOperator(value)) {
+          return;
+        }
+        
+        display.value += value;
       }
-
+    
+      function isOperator(value) {
+        return value === '+' || value === '-' || value === '*' || value === '/';
+      }
+    
       function clearDisplay() {
         document.getElementById("display").value = "";
       }
-
+    
       function calculate() {
         try {
           let result = eval(document.getElementById("display").value);
@@ -66,5 +75,6 @@
         }
       }
     </script>
+    
   </body>
 </html>
